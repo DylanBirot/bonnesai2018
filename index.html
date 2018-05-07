@@ -26,7 +26,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script src="./index.js" type="text/javascript"></script>
+    <script src="./services-switcher.js" type="text/javascript"></script>
     <script src="./assets/js/anime-master/anime.min.js"></script>
 
     <!-- -->
@@ -198,7 +202,7 @@
 
           <ul>
 
-            <li class="active">
+            <li class="active" id="strategy-service">
               <p>
                 01
               </p>
@@ -206,7 +210,7 @@
             </li>
             <!-- /li -->
 
-            <li>
+            <li id="ux-service">
               <p>
                 02
               </p>
@@ -214,16 +218,16 @@
             </li>
             <!-- /li -->
 
-            <li>
+            <li id="digital-service">
               <p>
-                02
+                03
               </p>
               <h4>Digital Innovation</h4>
             </li>
             <!-- /li -->
 
 
-            <li>
+            <li id="dev-service">
               <p>
                 04
               </p>
@@ -245,6 +249,8 @@
 
           <img id="dot-matrix-horizontal" src="./assets/imgs/home/dot-matrix-horizontal.svg" />
 
+          <div class="service-desc-loader-overlay"></div>
+
           <div class="backdrop">
 
             <div class="service-desc-content" id="strategy-desc">
@@ -258,6 +264,51 @@
               </p>
 
             </div>
+            <!-- /.service-desc-content -->
+
+
+            <div class="service-desc-content" id="ux-desc">
+
+              <h5>Lorem Ipsum dolor</h5>
+              <h6 class="gl-secondary-caps">USER EXPERIENCE . BRANDING . VISUAL DESIGN . MOTION DESIGN</h6>
+
+              <p>
+                To truly innovate, you have to do more than increase conversion and wow your audience. Innovation simultaneously requires a global view of your digital product and the parsing of every user interaction. It means understanding what the user needs before
+                they think they need it, and surprising them in the.
+              </p>
+
+            </div>
+            <!-- /.service-desc-content -->
+
+
+
+            <div class="service-desc-content" id="digital-desc">
+
+              <h5>Digital memes</h5>
+              <h6 class="gl-secondary-caps">USER EXPERIENCE . BRANDING . VISUAL DESIGN . MOTION DESIGN</h6>
+
+              <p>
+                To truly innovate, you have to do more than increase conversion and wow your audience. Innovation simultaneously requires a global view of your digital product and the parsing of every user interaction. It means understanding what the user needs before
+                they think they need it, and surprising them in the.
+              </p>
+
+            </div>
+            <!-- /.service-desc-content -->
+
+
+
+            <div class="service-desc-content" id="dev-desc">
+
+              <h5>Dev memes</h5>
+              <h6 class="gl-secondary-caps">USER EXPERIENCE . BRANDING . VISUAL DESIGN . MOTION DESIGN</h6>
+
+              <p>
+                To truly innovate, you have to do more than increase conversion and wow your audience. Innovation simultaneously requires a global view of your digital product and the parsing of every user interaction. It means understanding what the user needs before
+                they think they need it, and surprising them in the.
+              </p>
+
+            </div>
+            <!-- /.service-desc-content -->
 
 
           </div>
@@ -278,6 +329,22 @@
     <!-- /#services section -->
 
 
+    <section id="ethos">
+
+      <div class="gl-content-container">
+
+        <div class="wrapper">
+
+          <div class="backdrop"></div>
+
+          <h5>We help ambitious companies think beyond the ordinary, collaborating to develop
+          transformative and people-driven solutions that create change and inspire.</h5>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
 

@@ -3,6 +3,17 @@ $('document').ready(function() {
 
 	$('body').css('overflow', 'hidden');
 
+	$(window).scroll(function(event) {
+		var scrollTop = $(window).scrollTop();
+		console.log(scrollTop);
+
+		if (scrollTop >= 1700) {
+			servicesEnterTimeline.play();
+		}
+
+	});
+
+
 	var menuActive = false;
 
 	var devMode = !false;
@@ -50,7 +61,7 @@ $('document').ready(function() {
 				translateX: ["1000px", "0"],
 				translateY: ["-1000px", "0"],
 				duration: 3000,
-				offset: -1100,
+				offset: -1500,
 				easing: "easeInOutQuart",
 			})
 			.add({
@@ -58,7 +69,7 @@ $('document').ready(function() {
 				translateX: ["1200px", "0"],
 				translateY: ["-1200px", "0"],
 				duration: 3000,
-				offset: -1000,
+				offset: -1400,
 				easing: "easeInOutQuart",
 			})
 			.add({
@@ -66,7 +77,7 @@ $('document').ready(function() {
 				translateX: ["-1000px", "0"],
 				translateY: ["1000px", "0"],
 				duration: 3000,
-				offset: -1100,
+				offset: -1500,
 				easing: "easeInOutQuart",
 			})
 			.add({
@@ -80,7 +91,7 @@ $('document').ready(function() {
 				easing: "easeInOutQuart",
 			})
 			.add({
-				targets: '.gl-header-text-left a',
+				targets: '.gl-header-text-left h6',
 				translateY: ["10px", "0"],
 				translateX: ["10px", "0"],
 				rotate: [-2, 0],
@@ -107,7 +118,7 @@ $('document').ready(function() {
 	particlesJS("particles-js", {
 		"particles": {
 			"number": {
-				"value": 50,
+				"value": 120,
 				"density": {
 					"enable": true,
 					"value_area": 789.1476416322727
@@ -275,7 +286,7 @@ $('document').ready(function() {
 			duration: 300,
 			easing: "easeInOutCubic",
 			delay: 300,
-			offset: 300
+			offset: 100,
 		})
 		.add({
 			targets: ".gl-menu-project-btn-container a",
@@ -283,8 +294,8 @@ $('document').ready(function() {
 			opacity: [0, 1],
 			duration: 300,
 			easing: "easeInOutCubic",
-			delay: 500,
-			offset: 300
+			delay: 300,
+			offset: 600,
 		});
 
 
@@ -293,12 +304,88 @@ $('document').ready(function() {
 		if (!menuActive) {
 			showMenuAnim.play();
 			menuActive = true;
+			$('.gl-menu-overlay').css('pointer-events', 'auto');
 		} else {
 			showMenuAnim.play();
 			showMenuAnim.reverse();
+			$('.gl-menu-overlay').css('pointer-events', 'none');
 		}
 
 	});
+
+
+
+	var servicesEnterTimeline = anime.timeline({
+		autoplay: false
+	});
+
+
+	servicesEnterTimeline
+		.add({
+			targets: '#strategy-service',
+			translateY: ["40px", "0"],
+			translateX: ["40px", "0"],
+			rotate: [-3, 0],
+			opacity: [0, 1],
+			duration: 2000,
+			offset: -800,
+			easing: "easeInOutQuart",
+		})
+		.add({
+			targets: '#ux-service',
+			translateY: ["40px", "0"],
+			translateX: ["40px", "0"],
+			rotate: [-3, 0],
+			opacity: [0, 1],
+			duration: 2000,
+			offset: -750,
+			easing: "easeInOutQuart",
+		})
+		.add({
+			targets: '#digital-service',
+			translateY: ["40px", "0"],
+			translateX: ["40px", "0"],
+			rotate: [-3, 0],
+			opacity: [0, 1],
+			duration: 2000,
+			offset: -700,
+			easing: "easeInOutQuart",
+		})
+		.add({
+			targets: '#dev-service',
+			translateY: ["40px", "0"],
+			translateX: ["40px", "0"],
+			rotate: [-3, 0],
+			opacity: [0, 1],
+			duration: 2000,
+			offset: -650,
+			easing: "easeInOutQuart",
+		})
+		.add({
+			targets: '.service-desc-loader-overlay',
+			height: ["0%", "100%"],
+			duration: 500,
+			offset: 300,
+			easing: "easeInOutQuart",
+			complete: function(anim) {
+				$('#service-desc .backdrop').css('display', 'flex');
+				$('.service-desc-loader-overlay').css('top', '0');
+			}
+
+		})
+		.add({
+			targets: '.service-desc-loader-overlay',
+			height: ["100%", "0%"],
+			duration: 300,
+			offset: "-=500",
+			easing: "easeInOutQuart",
+			complete: function(anim) {
+				$('.service-desc-loader-overlay').css('bottom', '0');
+			}
+		});
+
+	// Add an overlay to the services section and animate it upwards while display:blocking the backdrop behind it
+
 
 
 
